@@ -1,0 +1,16 @@
+Write a function that takes in an array of unique integers and returns its powerset 
+
+
+function powerset(array){
+  let result = [[]]
+  for(let i = 0; i < array.length; i++){
+    let currNum = array[i]
+    let currArr = []
+    for(let j = 0; j < result.length; j++){
+      currArr.push(result[j].concat(currNum))
+    }
+    result.push(...currArr)
+  }
+  return result
+}
+
